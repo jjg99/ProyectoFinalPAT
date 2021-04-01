@@ -1,0 +1,52 @@
+<mxfile>
+    <diagram id="3-0ceVvvJ__p_Qc8tGtd" name="Page-1">
+        <mxGraphModel dx="971" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="30" width="870" height="870" as="geometry"/>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-20" value="Logo CTF" style="html=1;shadow=0;dashed=0;fillColor=#343A40;strokeColor=none;fontSize=16;fontColor=#ffffff;align=left;spacing=15;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="100" width="805" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-21" value="Inicio" style="fillColor=none;strokeColor=none;fontSize=14;fontColor=#ffffff;align=center;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry width="70" height="40" relative="1" as="geometry">
+                        <mxPoint x="110" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-22" value="Podio" style="fillColor=none;strokeColor=none;fontSize=14;fontColor=#9A9DA0;align=center;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry width="70" height="40" relative="1" as="geometry">
+                        <mxPoint x="180" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-23" value="Desafios" style="fillColor=none;strokeColor=none;fontSize=14;fontColor=#9A9DA0;align=center;spacingRight=0;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry width="80" height="40" relative="1" as="geometry">
+                        <mxPoint x="250" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-24" value="Sobre nosotros" style="fillColor=none;strokeColor=none;fontSize=14;fontColor=#9A9DA0;align=center;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry width="120" height="40" relative="1" as="geometry">
+                        <mxPoint x="320" y="15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-25" value="&lt;font color=&quot;#00ff00&quot;&gt;Log In&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;fontSize=14;fontColor=#1CA5B8;fillColor=none;strokeColor=#00FF00;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry x="1" width="70" height="40" relative="1" as="geometry">
+                        <mxPoint x="-80" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-26" value="Search" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;fontSize=14;fontColor=#6C767D;strokeColor=#CED4DA;fillColor=#ffffff;align=left;spacing=10;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry x="1" width="180" height="40" relative="1" as="geometry">
+                        <mxPoint x="-245" y="180" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-36" value="" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="wY98j-KsyImVUau4mbrn-20">
+                    <mxGeometry x="670" y="10" width="40" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="wY98j-KsyImVUau4mbrn-37" value="Osvaldo" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;fontSize=14;fontColor=#1CA5B8;strokeColor=#1CA5B8;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="790" y="180" width="70" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
