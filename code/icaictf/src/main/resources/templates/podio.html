@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>ICAI CTF</title>
     <meta charset="utf-8">
@@ -15,35 +15,57 @@
 
   </head>
   <body>
-    <!-- Creación de la barra de navegación -->
+  <!-- Creación de la barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <img src="https://img.icons8.com/wired/128/hacker.png" class="image-fluid logo-navbar"></img>
-                <b class="titulo-navbar">ICAI - Catch The Flag</b></a>
-            </a>
-            
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav flex-row flex-wrap">
-              <a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>
-              <a class="nav-link active col-6 col-lg-auto" href="./podio">Podio</a>
-              <a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>
-              <a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>
-            </div>
-            <hr class="d-lg-none text-white-50">
-            <div class="d-flex ms-auto flex-row flex-wrap" >
-                <button type="button" class="btn btn-outline-light col-12 col-lg-auto">Iniciar Sesión</button>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="https://img.icons8.com/wired/128/hacker.png" class="image-fluid logo-navbar"></img>
+          <b class="titulo-navbar">ICAI - Catch The Flag</b></a>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav flex-row flex-wrap">
+            <a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link active col-6 col-lg-auto" href="./podio">Podio</a>
+            <a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>
+            <a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>
+          </div>
+          <hr class="d-lg-none text-white-50">
+          <div class="d-flex ms-auto flex-row flex-wrap" >
+            <button type="button" class="btn btn-outline-light col-12 col-lg-auto">Iniciar Sesión</button>
           </div>
         </div>
+      </div>
     </nav>
-    <!-- Fin de la barra de navegación -->
+      <!-- Fin de la barra de navegación -->
+    <!-- Inicio de Podio -->
+      <h1 class="display-2 text-center">Podio</h1>
+      <div class="container">
+        <!-- Inicio Accordion -->
+        <div class="accordion accordion-flush" id="accordionFlushExample" th:each="user : ${users}">
+          <!-- Item -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne"
+                th:text=${user.username}> 
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body text-wrap">Hola esto es una pruebaaaaaaaaaaaaa a  a a agfd gf hfd dhgd </div>
+            </div>
+          </div>
+          <!-- Fin Item -->
+        </div>
+        <!-- Fin Accordion -->
+      </div>
+    <!-- Fin del podio -->
+
     <!-- <select>
       <option th:each="user : ${users}" th:value="${user.username}"
         th:text="${user.username}"></option>
     </select> -->
+
   </body>
 </html>
