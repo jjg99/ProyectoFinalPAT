@@ -29,7 +29,7 @@ function load_navbar(active) {
             html +='<a class="nav-link active col-6 col-lg-auto" href="#">Desafíos</a>';
             html +='<a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>';
             break;
-        case 'Inicio':
+        case 'Sobre nosotros':
             html +='<a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
             html +='<a class="nav-link col-6 col-lg-auto" href="./podio">Podio</a>';
             html +='<a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>';
