@@ -11,4 +11,8 @@ public class User {
 
     private String country;
 
+    private String country_code;
+
+    private int position;
+
 }
