@@ -10,34 +10,31 @@ function load_navbar(active) {
     html += '</button>';
     html += '<div class="collapse navbar-collapse" id="navbarNavAltMarkup">';
     html += '<div class="navbar-nav flex-row flex-wrap">';
-    switch (active) {
-        case 'Inicio':
-            html +='<a class="nav-link active col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="./podio">Podio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>';
-            break;
-        case 'Podio':
-            html +='<a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
-            html +='<a class="nav-link active col-6 col-lg-auto" href="./podio">Podio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>';
-            break;
-        case 'Desafios':
-            html +='<a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="./podio">Podio</a>';
-            html +='<a class="nav-link active col-6 col-lg-auto" href="#">Desafíos</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>';
-            break;
-        case 'Sobre nosotros':
-            html +='<a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="./podio">Podio</a>';
-            html +='<a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>';
-            html +='<a class="nav-link active col-6 col-lg-auto" href="#">Sobre nosotros</a>';
-            break;
-        default:
-            break;
+    // Opcion Inicio
+    html +='<a class="nav-link ';
+    if (active=='Inicio') {
+        html += 'active ';
     }
+    html += 'col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
+    // Opcion Podio
+    html +='<a class="nav-link ';
+    if (active=='Podio') {
+        html += 'active ';
+    }
+    html += 'col-6 col-lg-auto" aria-current="page" href="/podio">Podio</a>';
+    // Opcion Desafios
+    html +='<a class="nav-link ';
+    if (active=='Desafios') {
+        html += 'active ';
+    }
+    html += 'col-6 col-lg-auto" aria-current="page" href="#">Desafíos</a>';
+    // Opcion Sobre nosotors
+    html +='<a class="nav-link ';
+    if (active=='Sobre nosotros') {
+        html += 'active ';
+    }
+    html += 'col-6 col-lg-auto" aria-current="page" href="#">Sobre nosotros</a>';
+
     html +='        </div>';
     html +=         '<hr class="d-lg-none text-white-50">';
     html +=         '<div class="d-flex ms-auto flex-row flex-wrap" >';
