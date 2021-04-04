@@ -7,7 +7,7 @@
     <meta name="author" content="Juan Antonio Gil & Javier Jarauta">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS Bootstrap -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <!-- CSS Estandar-->
@@ -15,35 +15,15 @@
     <!-- CSS Podio-->
     <link rel="stylesheet" href="./style/podio.css">
 
+    <!-- JS estandar -->
+    <script type=text/javascript src="./js/std.js"></script>
+
   </head>
   <body>
   <!-- Creación de la barra de navegación -->
   <div id="navbar">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="https://img.icons8.com/wired/128/hacker.png" class="image-fluid logo-navbar"></img>
-          <b class="titulo-navbar">ICAI - Catch The Flag</b></a>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav flex-row flex-wrap">
-            <a class="nav-link col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>
-            <a class="nav-link active col-6 col-lg-auto" href="./podio">Podio</a>
-            <a class="nav-link col-6 col-lg-auto" href="#">Desafíos</a>
-            <a class="nav-link col-6 col-lg-auto" href="#">Sobre nosotros</a>
-          </div>
-          <hr class="d-lg-none text-white-50">
-          <div class="d-flex ms-auto flex-row flex-wrap" >
-            <button type="button" class="btn btn-outline-light col-12 col-lg-auto">Iniciar Sesión</button>
-          </div>
-        </div>
-      </div>
-    </nav>
   </div>
-    <!-- Fin de la barra de navegación -->
+  <!-- Fin de la barra de navegación -->
 
     <!-- Inicio de Podio -->
     <h1 class="display-2 text-center">Podio</h1>
@@ -70,4 +50,7 @@
       </div>
     <!-- Fin del podio -->
   </body>
+  <script>
+    load_navbar('Podio')
+  </script>
 </html>
