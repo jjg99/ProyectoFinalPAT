@@ -49,9 +49,6 @@
         load_footer()
     </script>
     <script>
-        const loginForm = document.getElementById("formulario-inisesion");
-        const loginButton = document.getElementById("btn-inisesion");
-
         document.getElementById("formulario-inisesion").addEventListener('submit', loginUsuario);
         function loginUsuario (event){
             event.preventDefault()
@@ -67,7 +64,8 @@
             {
                 method : 'POST',
                 headers : {
-                    'Content-Type' : 'application/json'
+                    'Content-Type' : 'application/json',
+                    'Accept' : 'application/json'
                 },
                 body : JSON.stringify(data)
                 
@@ -82,7 +80,7 @@
             })
             .then(data => {
                 
-                
+                window.location.replace("/home/"+data.username)
                 
             })
             .catch(error => console.error(error))

@@ -1,0 +1,42 @@
+-----------------------------------------------------
+|   Proyecto Final de PAT                           |
+|   1ª Entrega Proyecto Final - Entrega SpringBoot  |
+-----------------------------------------------------
+
+Link al repositorio de GitHub
+----------------------------------------
+https://github.com/jjg99/ProyectoFinalPAT.git
+
+
+Integrantes del equipo
+-----------------------------------------
+-   Juan Antonio Gil Carrera    (@J0nan)
+-   Javier Jarauta Gastelu      (@jjg99)
+
+
+Diseño común (Issue #2)
+-----------------------------------------
+-   navbar
+-   footer
+-   estilo y lookandfeel (std.css, std.js)
+-   API REST
+
+
+Trabajo de Juan Antonio     (@J0nan)
+-----------------------------------------
+-   Podio (Issue #6)
+    -   Front-end
+    -   Back-end
+-   Sobre nosotros (Issue #4)
+    -   Front-end
+    -   Back-end
+
+
+Trabajo de Javier     (@jjg99)
+-----------------------------------------
+-   Login y bienvenida (Issue #3)
+    -   Front-end
+-   Login y bienvenida (Issue #5)
+    -   Back-end
+
+ 
