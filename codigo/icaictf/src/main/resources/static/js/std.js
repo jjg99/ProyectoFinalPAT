@@ -37,7 +37,7 @@ function load_navbar(active) {
     if (active=='Sobre nosotros') {
         html += 'active ';
     }
-    html += 'col-6 col-lg-auto" aria-current="page" href="/sobre_nosotros.html">Sobre nosotros</a>';
+    html += 'col-6 col-lg-auto" aria-current="page" href="/sobre_nosotros.html?sobre_nosotros">Sobre nosotros</a>';
 
     html +='        </div>';
     html +=         '<hr class="d-lg-none text-white-50">';
