@@ -10,30 +10,34 @@ function load_navbar(active) {
     html += '</button>';
     html += '<div class="collapse navbar-collapse" id="navbarNavAltMarkup">';
     html += '<div class="navbar-nav flex-row flex-wrap">';
+
     // Opcion Inicio
     html +='<a class="nav-link ';
     if (active=='Inicio') {
         html += 'active ';
     }
     html += 'col-6 col-lg-auto" aria-current="page" href="/">Inicio</a>';
+
     // Opcion Podio
     html +='<a class="nav-link ';
     if (active=='Podio') {
         html += 'active ';
     }
     html += 'col-6 col-lg-auto" aria-current="page" href="/podio">Podio</a>';
+
     // Opcion Desafios
     html +='<a class="nav-link ';
     if (active=='Desafios') {
         html += 'active ';
     }
     html += 'col-6 col-lg-auto" aria-current="page" href="#">Desafíos</a>';
+
     // Opcion Sobre nosotors
     html +='<a class="nav-link ';
     if (active=='Sobre nosotros') {
         html += 'active ';
     }
-    html += 'col-6 col-lg-auto" aria-current="page" href="#">Sobre nosotros</a>';
+    html += 'col-6 col-lg-auto" aria-current="page" href="/sobre_nosotros.html">Sobre nosotros</a>';
 
     html +='        </div>';
     html +=         '<hr class="d-lg-none text-white-50">';

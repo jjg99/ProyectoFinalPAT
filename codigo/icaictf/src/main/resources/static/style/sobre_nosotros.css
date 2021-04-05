@@ -1,0 +1,40 @@
+table{
+    width: 85vw;
+    margin-top: 20px;
+}
+a.sobre_nosotros{
+    color: black;
+    font-weight: normal;
+    padding: 0px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-right: 10vw;
+    width: max-content;
+
+}
+
+a.sobre_nosotros:hover{
+    color: lightskyblue;
+    border-color: lightskyblue;
+}
+
+a.sobre_nosotros.active:hover{
+    color: black;
+    border-color: black;
+}
+
+a.sobre_nosotros.active{
+    border-left: 2px black solid;
+    padding-left: 8px;
+}
+
+#contenido{
+    font-weight: normal;
+    text-align: justify;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
