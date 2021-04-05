@@ -26,18 +26,18 @@
         <!-- Fin de la barra de navegación -->
 
         <div class="form-signin text-center">
-            <form class="formulario-inisesion">
+            <form class="formulario-inisesion" id="formulario-inisesion">
                 <img class="img-inisesion mb-4" src="https://img.icons8.com/wired/128/hacker.png">
                 <h1 class="h3 mb-3 fw-normal">Inicio de Sesión</h1>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="emailInput" placeholder="usuario@comillas.edu">
-                    <label for="emailInput">Ususario</label>
+                    <input type="text" class="form-control" id="userInput" placeholder="usuario">
+                    <label for="userInput">Ususario</label>
                 </div>
                 <div class="form-floating">
                     <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
                     <label for="passwordInput">Contraseña</label>
                 </div>
-                <button class="w-100 btn btn-lg btn-dark btn-inisesion" type="submit">Iniciar Sesión</button>
+                <button class="w-100 btn btn-lg btn-dark btn-inisesion" type="submit" id="btn-inisesion">Iniciar Sesión</button>
             </form>
         </div>
         <!-- Creación del footer-->
@@ -47,6 +47,48 @@
     <script>
         load_navbar('Inicio')
         load_footer()
+    </script>
+    <script>
+        const loginForm = document.getElementById("formulario-inisesion");
+        const loginButton = document.getElementById("btn-inisesion");
+
+        document.getElementById("formulario-inisesion").addEventListener('submit', loginUsuario);
+        function loginUsuario (event){
+            event.preventDefault()
+            
+            let usuario = document.getElementById("userInput").value;
+            let contr = document.getElementById("passwordInput").value;
+            let data = {
+                    "username": usuario,
+                    "password": contr
+                }
+
+            fetch('/login', 
+            {
+                method : 'POST',
+                headers : {
+                    'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify(data)
+                
+            })
+            .then(response => {
+                if(response.ok) {
+                    return response.json()
+                    
+                } else {
+                    throw Error("Error en la respuesta" + response.status)
+                }
+            })
+            .then(data => {
+                
+                
+                
+            })
+            .catch(error => console.error(error))
+            
+        }
+
     </script>
 </html>
 

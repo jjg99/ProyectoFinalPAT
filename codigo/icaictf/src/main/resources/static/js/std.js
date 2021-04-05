@@ -42,7 +42,7 @@ function load_navbar(active) {
     html +='        </div>';
     html +=         '<hr class="d-lg-none text-white-50">';
     html +=         '<div class="d-flex ms-auto flex-row flex-wrap" id=btn-navbar-user>';
-    html +=             '<button type="button" class="btn btn-outline-light col-12 col-lg-auto">Iniciar Sesión</button>';
+    html +=             '<button type="button" class="btn btn-outline-light col-12 col-lg-auto" id="btn-login" onclick="location.href=\'login.html\';">Iniciar Sesión</button>';
     html +=         '</div>';
     html +=     '</div>';
     html += '</div>';
