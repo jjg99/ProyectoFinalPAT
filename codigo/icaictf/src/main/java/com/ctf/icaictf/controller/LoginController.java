@@ -1,5 +1,7 @@
 package com.ctf.icaictf.controller;
 
+import javax.validation.Valid;
+
 import com.ctf.icaictf.model.User;
 
 import org.springframework.http.HttpStatus;
@@ -15,8 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class LoginController {
     @PostMapping("login")
-    public ResponseEntity<User> login(@RequestBody User user) {
-        
+    public ResponseEntity<User> login(@RequestBody @Valid User user) {
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
     @GetMapping("home/{userID}")

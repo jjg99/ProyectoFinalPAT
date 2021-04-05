@@ -17,6 +17,11 @@
         <!-- JS estandar -->
         <script type=text/javascript src="./js/std.js"></script>
 
+        <!-- JQUery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+        <!-- Favicon -->
+        <link rel="icon" href="https://img.icons8.com/wired/32/hacker.png">
 
     </head>
     <body>
@@ -39,6 +44,22 @@
                 </div>
                 <button class="w-100 btn btn-lg btn-dark btn-inisesion" type="submit" id="btn-inisesion">Iniciar Sesión</button>
             </form>
+        </div>
+        <!-- Modal Bootstrap -->
+        <div class="modal fade" id="modal" aria-hidden="true" aria-labelledby="..." tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Se ha dado el siguiente error: </h4>
+                </div>
+                <div class="modal-body" id="modal-text">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+          </div>
         </div>
         <!-- Creación del footer-->
         <div id="footer">
@@ -75,7 +96,11 @@
                     return response.json()
                     
                 } else {
-                    throw Error("Error en la respuesta" + response.status)
+                    // console.log(response)
+                    // console.log(response.json())
+                    showModal(response)
+                    $("#modal").modal("show");
+                    throw Error("Error en la respuesta " + response.status)
                 }
             })
             .then(data => {
@@ -85,6 +110,13 @@
             })
             .catch(error => console.error(error))
             
+        }
+
+        function showModal(response) {
+            html = '<p>Código de error: '+response.status+'</p>';
+            // html += '<p>Mensaje: '+response.errors[0].json().defaultMessage+'<p>';
+            console.log(response)
+            document.getElementById("modal-text").innerHTML=html;
         }
 
     </script>
