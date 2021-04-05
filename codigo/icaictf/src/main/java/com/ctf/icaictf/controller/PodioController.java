@@ -28,7 +28,22 @@ public class PodioController {
         user3.setCountry("España");
         user3.setCountry_code("ES");
         user3.setPosition(3);
-        final List<User> users = List.of(user1, user2, user3);
+        final User user4 = new User();
+		user4.setUsername("Felíx");
+        user4.setCountry("Argentina");
+        user4.setCountry_code("AR");
+        user4.setPosition(4);
+		final User user5 = new User();
+		user5.setUsername("Diamante");
+        user5.setCountry("España");
+        user5.setCountry_code("ES");
+        user5.setPosition(5);
+		final User user6 = new User();
+		user6.setUsername("Tom");
+        user6.setCountry("Estados Unidos de Ámerica");
+        user6.setCountry_code("US");
+        user6.setPosition(6);
+        final List<User> users = List.of(user1, user2, user3, user4, user5, user6);
 		model.addAttribute("users", users);
         return "podio";
         
