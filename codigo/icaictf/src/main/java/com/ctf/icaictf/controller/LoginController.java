@@ -13,7 +13,7 @@ public class LoginController {
     public String getLogin(Model m){
         final User usuario = new User();
         usuario.setUsername("username");
-        return "login";
+        return "userbienvenida";
     }
 
     

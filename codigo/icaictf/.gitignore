@@ -3,6 +3,8 @@ target/
 .mvn/
 mvnw
 mvnw.cmd
+codigo/.DS_STORE
+.DS_STORE
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

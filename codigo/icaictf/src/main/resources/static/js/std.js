@@ -41,7 +41,7 @@ function load_navbar(active) {
 
     html +='        </div>';
     html +=         '<hr class="d-lg-none text-white-50">';
-    html +=         '<div class="d-flex ms-auto flex-row flex-wrap" >';
+    html +=         '<div class="d-flex ms-auto flex-row flex-wrap" id=btn-navbar-user>';
     html +=             '<button type="button" class="btn btn-outline-light col-12 col-lg-auto">Iniciar Sesión</button>';
     html +=         '</div>';
     html +=     '</div>';
@@ -60,4 +60,11 @@ function load_footer() {
     html += '</footer>';
 
     document.getElementById("footer").innerHTML = html;
+}
+
+function cambiar_header_usuario(nombre) {
+    html   = '<img src="https://img.icons8.com/wired/128/anonymous-mask.png" class="image-fluid user-navbar"></img>'
+    html  += '<button type="button" class="btn btn-outline-danger col-12 col-lg-auto">Cerrar Sesión</button>';
+
+    document.getElementById("btn-navbar-user").innerHTML = html;
 }
