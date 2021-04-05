@@ -50,3 +50,14 @@ function load_navbar(active) {
 
     document.getElementById("navbar").innerHTML = html;
 }
+
+function load_footer() {
+    html  = '<footer class="bg-dark">';
+    html +=     '<div class="container-fluid">';
+    html +=         '<span class="text-muted">Contacto: </span>';
+    html +=         '<span class="text-muted"><a href="mailto:jjarauta@alu.comillas.edu">jjarauta@alu.comillas.edu</a></span>';
+    html +=     '</div>';
+    html += '</footer>';
+
+    document.getElementById("footer").innerHTML = html;
+}
