@@ -38,3 +38,14 @@ a.sobre_nosotros.active{
     margin-left: auto;
     margin-right: auto;
 }
+
+.row{
+    text-align: start;
+}
+
+#mapa{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

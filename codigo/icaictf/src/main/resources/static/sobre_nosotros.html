@@ -32,26 +32,104 @@
             <tr>
                 <th class="float-start">
                     <ul class="nav flex-column float-start">
-                        <li class="nav-item">
-                          <a class="nav-link sobre_nosotros active " aria-current="page">Sobre nosotros</a>
+                        <li class="nav-item" id="sobre_nosotros">
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link sobre_nosotros" href="#">Contacto</a>
+                        <li class="nav-item" id="contacto">
                         </li>
                     </ul>
                 </th>
-                <th id="contenido">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non lectus non augue lacinia egestas a in enim. Mauris aliquet porttitor arcu ut elementum. Aenean mattis nunc eu nisi egestas, ac varius odio aliquam. Curabitur faucibus dui vel sapien porta, ac bibendum dolor iaculis. Nulla elementum felis et pulvinar venenatis. Integer metus urna, porta vitae porttitor rutrum, molestie pretium erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris luctus mauris non tempor lobortis.
-                    </p>
-                    <p>Sed nec nisi eget nisi efficitur aliquam non sollicitudin lorem. Aliquam id mattis arcu. Duis pulvinar sollicitudin mi eu blandit. Aliquam sed viverra leo. Ut semper neque ligula, sed hendrerit odio feugiat et. Quisque interdum vitae mauris vel aliquet. In porttitor porta lectus sed ultricies. Proin lacinia ex eros, ut bibendum felis posuere ac. Nulla bibendum convallis quam vitae dignissim. Mauris venenatis dui vel quam lacinia placerat. Aenean aliquam facilisis dictum. Nam tincidunt nisi sit amet condimentum vestibulum. Etiam faucibus est ac erat tristique, a vestibulum elit egestas.
-                    </p>
+                <th id="contenido" class="col-12">
+                    
                 </th>
             </tr>
         </table>
+        <div id="mapa"></div>
+        <div id="footer">
+        </div>
     </body>
     <script>
+        function GetURLParameters(){
+            var sPageURL = decodeURIComponent(window.location.search.substring(1));
+            var sURLVariables = sPageURL.split('&');
+            return sURLVariables[0];
+        }
+        
+        function load_contenido(apartado) {
+            html_sobre_nosotros = '<a class="nav-link sobre_nosotros';
+            if (apartado == "sobre_nosotros") {
+                html_sobre_nosotros += ' active" ';
+            } else {
+                html_sobre_nosotros += '" href="./sobre_nosotros.html?sobre_nosotros" ';
+            }
+            html_sobre_nosotros += 'aria-current="page">Sobre nosotros</a>';
+            
+            html_contacto = '<a class="nav-link sobre_nosotros ';
+            if (apartado == "contacto") {
+                html_contacto += 'active" ';
+            } else {
+                html_contacto += '" href="./sobre_nosotros.html?contacto" ';
+            }
+            html_contacto += 'aria-current="page">Contacto</a>';
+
+            document.getElementById("sobre_nosotros").innerHTML=html_sobre_nosotros;
+            document.getElementById("contacto").innerHTML=html_contacto;
+            load_contacto(apartado)
+        }
+
+        function load_contacto(apartado){
+            if (apartado == "contacto") {
+                fetch('http://localhost:8080/contacto',{
+                    headers:{
+                        Accept: 'application/json',
+                    },
+                    method: 'GET'
+                })
+                .then(res =>{
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        throw res;
+                    }
+                })
+                .then(res =>{
+                    html = '<dl class="row">'
+                    html +='<dt class="col-xxl-2">Teléfono:</dt>'
+                    html +='<dd class="col-xxl-3">'+res.telefono+'</dd>'
+                    html +='<dt class="col-xxl-1">Horario:</dt>'
+                    html +='<dd class="col-xxl-4">'+res.horario+'</dd>' 
+                    html +='<dl class="row">'
+                    html +='<dt class="col-xxl-2">Correo electrónico:</dt>'
+                    html +='<dd class="col-xxl-3">'+res.correo+'</dd>'
+                    html +='<dt class="col-xxl-1">Dirección:</dt>'
+                    html +='<dd class="col-xxl-4">'+res.direccion+'</dd>'  
+
+                    document.getElementById("contenido").innerHTML=html;
+
+                    html_mapa='<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.043120802907!2d-3.7149046847679776!3d40.430044062753765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4228662dc537c7%3A0x1ea4f20d20268a8a!2sCalle%20de%20Alberto%20Aguilera%2C%2025%2C%2028015%20Madrid!5e0!3m2!1ses!2ses!4v1617650379668!5m2!1ses!2ses" width="90%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>'
+                    document.getElementById("mapa").innerHTML=html_mapa;
+
+                })
+                .catch(e => console.error(e));
+            } else {
+                html = '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan eu nulla quis ullamcorper. Proin consectetur, lacus sodales facilisis efficitur, sapien orci auctor lacus, id elementum dolor mi ac enim. Sed nisl arcu, scelerisque sed luctus eu, congue ut dolor. Integer sit amet laoreet mauris. Quisque sed aliquam justo, sed vehicula nisl. Nam efficitur leo sed posuere ultrices. Morbi interdum diam lorem, id aliquet lorem facilisis et. Curabitur pellentesque purus mauris, quis malesuada justo commodo non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam suscipit eu lacus mollis porttitor. Proin ullamcorper, metus eget suscipit euismod, odio purus pretium metus, at semper urna enim sit amet ante. Sed consequat ac dolor quis condimentum. Sed rutrum magna sit amet sollicitudin egestas.'
+                html +='</p>'
+                html +='<p>Maecenas a pharetra nibh, in auctor magna. Fusce tempus eros eu congue suscipit. Morbi nisi mauris, fringilla ac tempor vitae, imperdiet a augue. Aliquam scelerisque dictum euismod. Mauris molestie lacus interdum nisi suscipit faucibus. Etiam at ipsum tincidunt, luctus sem at, tempus justo. Proin eu nibh ac mi luctus vestibulum ac vel velit. Mauris ac dictum turpis. Sed vel ipsum vehicula, pulvinar tellus quis, placerat ante. Sed bibendum iaculis pellentesque. Pellentesque in magna eu lacus facilisis vestibulum. Sed turpis mi, pretium non odio eget, eleifend tincidunt velit. Nulla nec diam tristique, blandit lectus quis, fermentum nulla. Nunc facilisis lectus vel libero tristique, suscipit ultrices nisl condimentum. Fusce placerat efficitur ex, et condimentum lectus ultrices nec. Maecenas tincidunt efficitur sapien, a cursus tellus accumsan quis.'
+                html +='</p>'
+                html +='<p>Sed maximus quam a efficitur mollis. Phasellus id mattis velit, sit amet aliquam orci. Donec mattis ipsum ut fermentum laoreet. Integer condimentum tristique viverra. Nullam vehicula non lorem id cursus. Donec volutpat tristique leo ut euismod. Nulla semper diam turpis, id lacinia metus tincidunt nec. Duis auctor ultrices leo, ac eleifend purus eleifend in. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque eget iaculis arcu. Mauris vitae ornare lorem. Nullam volutpat mi non volutpat aliquet. Nullam blandit, risus accumsan congue maximus, nisi ipsum laoreet erat, sed molestie sapien erat sit amet tortor.'
+                html +='</p>'
+                html +='<p>Proin eget lacinia nunc, in lacinia magna. Quisque posuere enim at velit ullamcorper, vel suscipit magna tempus. Morbi auctor orci sit amet mi imperdiet, nec iaculis magna laoreet. Vestibulum et congue turpis. In congue tristique erat, malesuada tempus ex mattis at. Curabitur porttitor ligula et risus commodo, ac vehicula sem pellentesque. Donec luctus, mi sit amet tristique pulvinar, ante libero fermentum diam, in ultricies lectus sapien quis mauris. Sed felis neque, efficitur sit amet viverra tincidunt, rutrum ac massa. Donec venenatis ipsum sed ligula pretium, in varius enim rutrum. Duis id interdum justo. Vestibulum ut orci sodales, egestas metus quis, malesuada ante. Morbi porta velit euismod, dictum leo vitae, feugiat justo. Integer porttitor erat eget venenatis euismod.'
+                html +='</p>'
+                html +='<p>Vivamus bibendum varius tellus ac facilisis. Maecenas tortor elit, aliquet nec gravida eget, eleifend vitae justo. Fusce eu nunc mollis, laoreet risus quis, congue elit. Praesent vitae risus suscipit, mattis ligula non, commodo ligula. Vestibulum condimentum porta tellus ut rutrum. Sed pellentesque quam vel laoreet aliquet. In ultrices vel justo a volutpat. Nullam gravida, magna ac rhoncus sagittis, orci libero fermentum leo, a lacinia purus dui eu nulla. Vivamus eros est, cursus quis facilisis eget, feugiat ac libero.'
+                html +='</p>'
+                document.getElementById("contenido").innerHTML=html;
+            }
+        }
+    </script>
+    <script>
         load_navbar('Sobre nosotros')
-      </script>
+        load_contenido(GetURLParameters())
+        load_footer();
+    </script>
 </html>
 
 
