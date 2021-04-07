@@ -19,6 +19,8 @@ public class LoginController {
     @PostMapping("login")
     public ResponseEntity<User> login(@RequestBody @Valid User user) {
 		return new ResponseEntity<>(user, HttpStatus.OK);
+        //devolver 403.html si hay error
+        //si va bien return "redirect:/home/"+username;
 	}
     @GetMapping("home/{userID}")
     public String login(Model model, @PathVariable String userID){
