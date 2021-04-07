@@ -7,6 +7,10 @@ Link al repositorio de GitHub
 ----------------------------------------
 https://github.com/jjg99/ProyectoFinalPAT.git
 
+Link al deployment
+----------------------------------------
+http://jonan.hopto.org:8080/
+
 
 Integrantes del equipo
 -----------------------------------------
