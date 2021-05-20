@@ -29,7 +29,7 @@ public class LoginController {
         usuario.setUsername(userID);
         usuario.setCountry("España");
         usuario.setCountry_code("ES");
-        usuario.setPosition(3);
+        //usuario.setPosition(3);
         model.addAttribute("usuario", usuario);
         return "userbienvenida";
     }

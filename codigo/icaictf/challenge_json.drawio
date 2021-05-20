@@ -1,0 +1,16 @@
+<mxfile>
+    <diagram id="P7sSKq73IG89lM0narc3" name="Page-1">
+        <mxGraphModel dx="1068" dy="517" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="Desafio" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="90" width="280" height="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Nombre del desafio&#10;Nombre del autor&#10;Dificultad&#10;Descripcion&#10;Archivos (1-5)&#10;    Numero&#10;    Archivo&#10;Pistas (0-5)&#10;    Numero&#10;    Pista&#10;Solucion" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="3" vertex="1">
+                    <mxGeometry y="30" width="280" height="220" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
