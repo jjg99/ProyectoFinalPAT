@@ -26,4 +26,13 @@ public class ChallengeServiceImpl implements ChallengeService{
         }
         return true;
     }
+
+    @Override
+    public Challenge getChallengeById(Integer id) {
+        try {
+            return challengeRepository.findById(id).get();
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
