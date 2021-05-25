@@ -20,6 +20,7 @@ public class ChallengeController {
     @Autowired
     private ChallengeService challengeService;
     
+    // @PostMapping("/challenge") TODO Ponemos este mejor? 
     @PostMapping("/new")
     public ResponseEntity<String> createChallenge(@RequestBody @Valid Challenge challenge) {
         // System.out.println(challenge.getData().get("archivos"));
@@ -29,6 +30,5 @@ public class ChallengeController {
         } else {
             return new ResponseEntity<String>("KO", HttpStatus.BAD_REQUEST);
         }
-
     }
 }

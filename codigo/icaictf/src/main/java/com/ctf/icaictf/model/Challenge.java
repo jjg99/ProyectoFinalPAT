@@ -26,7 +26,7 @@ public class Challenge {
 
     //@NotBlank
     // private ChallengeData data;
-    private JSONObject data;
+    private String data;
 
 
 }
