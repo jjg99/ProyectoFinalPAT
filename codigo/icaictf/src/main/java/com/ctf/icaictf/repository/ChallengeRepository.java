@@ -3,7 +3,7 @@ package com.ctf.icaictf.repository;
 import com.ctf.icaictf.model.Challenge;
 import com.ctf.icaictf.model.challengedata.ChallengeData;
 
-import org.json.JSONObject;
+
 import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;

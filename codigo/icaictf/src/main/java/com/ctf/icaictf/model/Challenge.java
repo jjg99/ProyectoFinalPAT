@@ -5,7 +5,6 @@ import javax.validation.constraints.NotNull;
 
 import com.ctf.icaictf.model.challengedata.ChallengeData;
 
-import org.json.JSONObject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
