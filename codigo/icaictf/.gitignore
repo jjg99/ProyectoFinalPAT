@@ -5,6 +5,7 @@ codigo/.DS_STORE
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+codigo/icaictf/uploaded/**
 
 ### STS ###
 .apt_generated
