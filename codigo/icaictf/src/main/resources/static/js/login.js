@@ -19,7 +19,7 @@ function validateForm(event) {
                     console.log("Authenticated");
                     //window.Cookies.set('token', data.jwttoken)
                     document.cookie = "token="+data.jwttoken;
-                    document.cookie = ""
+                    document.cookie = "username="+usuario;
                     window.location.replace("/home/"+usuario)
 
                 } else {

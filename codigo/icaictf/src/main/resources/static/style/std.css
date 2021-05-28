@@ -12,6 +12,11 @@ img.user-navbar {
     -webkit-filter: invert(100%)
 }
 
+img.user-navbar:hover{
+    filter: invert(50%);
+    -webkit-filter: invert(50%)
+}
+
 .titulo-navbar{
     font-size: 1.25em;
 }

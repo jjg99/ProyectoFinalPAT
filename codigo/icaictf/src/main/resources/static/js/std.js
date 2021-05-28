@@ -64,7 +64,7 @@ function load_footer() {
 }
 
 function cambiar_header_usuario(nombre) {
-    html   = '<img src="https://img.icons8.com/wired/128/anonymous-mask.png" class="image-fluid user-navbar"></img>'
+    html   = '<img src="https://img.icons8.com/wired/128/anonymous-mask.png" class="image-fluid user-navbar" onclick=redirigirUsuario()></img>'
     html  += '<button type="button" class="btn btn-outline-danger col-12 col-lg-auto" onclick="hacer_logout()">Cerrar Sesión</button>';
 
     document.getElementById("btn-navbar-user").innerHTML = html;
@@ -110,7 +110,7 @@ function tokenVerification() {
     console.log(getCookie('token'));
 }
 
-function getCookie(cname) {
+function getCookie(cname='token') {
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i = 0; i < ca.length; i++) {
@@ -135,5 +135,6 @@ function getCookie(cname) {
   }
 
   function redirigirUsuario() {
-    var tok = getCookie('token')
+    var nom = getCookie('username')
+    document.location.href="/home/"+nom;
   }
