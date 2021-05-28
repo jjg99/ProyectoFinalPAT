@@ -2,7 +2,7 @@ package com.ctf.icaictf.controller;
 
 import javax.validation.Valid;
 
-import com.ctf.icaictf.model.User;
+import com.ctf.icaictf.model.UserDetail;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class LoginController {
     @PostMapping("login")
-    public ResponseEntity<User> login(@RequestBody @Valid User user) {
+    public ResponseEntity<UserDetail> login(@RequestBody @Valid UserDetail user) {
 		return new ResponseEntity<>(user, HttpStatus.OK);
         //devolver 403.html si hay error
         //si va bien return "redirect:/home/"+username;
@@ -25,7 +25,7 @@ public class LoginController {
     @GetMapping("home/{userID}")
     public String login(Model model, @PathVariable String userID){
         
-        final User usuario = new User();
+        final UserDetail usuario = new UserDetail();
         usuario.setUsername(userID);
         usuario.setCountry("España");
         usuario.setCountry_code("ES");

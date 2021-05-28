@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Table("USERS")
-public class User {
+public class UserDetail {
     @NotBlank
     @Id
     @Size(min=4, max=24)
@@ -24,7 +24,7 @@ public class User {
 
     private String country_code;
 
-    @NotBlank
+    //@NotBlank
     private String role;
 
 }

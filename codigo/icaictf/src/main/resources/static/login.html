@@ -70,46 +70,41 @@
         load_footer()
     </script>
     <script>
-        document.getElementById("formulario-inisesion").addEventListener('submit', loginUsuario);
-        function loginUsuario (event){
+        document.getElementById("formulario-inisesion").addEventListener('submit', validateForm);
+        function validateForm(event) {
             event.preventDefault()
-            
-            let usuario = document.getElementById("userInput").value;
-            let contr = document.getElementById("passwordInput").value;
-            let data = {
-                    "username": usuario,
-                    "password": contr
-                }
+            try {
+                var usuario = document.getElementById("userInput").value;
+                var contr = document.getElementById("passwordInput").value;
+                const data = { username: usuario, password: contr };
+                const address = '/api/login';
+                fetch(address, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                        if (typeof data.jwttoken !== 'undefined') {
+                            console.log("Authenticated");
+                            //window.Cookies.set('token', data.jwttoken)
+                            document.cookie = "token="+data.jwttoken;
+                            window.location.replace("/home/"+usuario)
+                            //document.location.href="www.google.es";
 
-            fetch('/login', 
-            {
-                method : 'POST',
-                headers : {
-                    'Content-Type' : 'application/json',
-                    'Accept' : 'application/json'
-                },
-                body : JSON.stringify(data)
-                
-            })
-            .then(response => {
-                if(response.ok) {
-                    return response.json()
-                    
-                } else {
-                    // console.log(response)
-                    // console.log(response.json())
-                    showModal(response)
-                    $("#modal").modal("show");
-                    throw Error("Error en la respuesta " + response.status)
-                }
-            })
-            .then(data => {
-                
-                window.location.replace("/home/"+data.username)
-                
-            })
-            .catch(error => console.error(error))
-            
+                        } else {
+                            alert("Credential not recognized");
+                            showModal("Credencial no reconocida");
+                        }
+                    });
+
+            } catch (err) {
+                console.error(err.message);
+            }
+            return false;
         }
 
         function showModal(response) {
@@ -121,17 +116,3 @@
 
     </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
