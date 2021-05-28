@@ -17,17 +17,17 @@ function sendChallenge(event){
 
     let challenge = {
         'difficulty' : difficulty,
-        'username' : "j0nan", ////////////////////////////////////////////////////////////////////////////////////////////////////////
         'data' : JSON.stringify(data),
         'name' : name,
         'description' : description
     }
     console.warn(challenge)
 
-    fetch('../challenges/new', 
+    fetch('/challenges/new', 
     {
         method : 'POST',
         headers : {
+            'Authorization': 'Bearer '+ document.cookie.split("=")[1],
             'Content-Type' : 'application/json',
             'Accept' : 'application/json'
         },
@@ -56,8 +56,11 @@ function sendFile(challenge) {
         formData.append('files', files[index]);
     }
  
-    fetch("../files/upload/"+challenge.id, 
+    fetch("/files/upload/"+challenge.id, 
     {
+        headers : {
+            'Authorization': 'Bearer '+ document.cookie.split("=")[1],
+        },
         method : 'POST',
         body : formData
     })

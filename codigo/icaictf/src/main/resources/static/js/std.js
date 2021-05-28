@@ -54,7 +54,7 @@ function load_navbar(active) {
 function load_footer() {
     html  = '<footer class="bg-dark">';
     html +=     '<div class="container-fluid">';
-    html +=         '<span class="text-muted"><a href="./sobre_nosotros.html?contacto">Contacto</a></span>';
+    html +=         '<span class="text-muted"><a href="/sobre_nosotros.html?contacto">Contacto</a></span>';
     html +=     '</div>';
     html += '</footer>';
 

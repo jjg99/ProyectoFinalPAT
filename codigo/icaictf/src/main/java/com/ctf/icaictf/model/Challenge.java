@@ -19,7 +19,6 @@ public class Challenge {
     @NotNull
     private Integer difficulty;
 
-    @NotBlank
     private String username;
 
     @NotBlank
