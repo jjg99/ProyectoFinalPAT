@@ -68,7 +68,7 @@ function cambiar_header_usuario(nombre) {
     html  += '<button type="button" class="btn btn-outline-danger col-12 col-lg-auto" onclick="hacer_logout()">Cerrar Sesión</button>';
 
     document.getElementById("btn-navbar-user").innerHTML = html;
-    document
+
 }
 
 function getCookie(cname) {
