@@ -49,6 +49,8 @@ function load_navbar(active) {
     html +='</nav>';
 
     document.getElementById("navbar").innerHTML = html;
+
+    tokenPresence()
 }
 
 function load_footer() {
@@ -63,7 +65,75 @@ function load_footer() {
 
 function cambiar_header_usuario(nombre) {
     html   = '<img src="https://img.icons8.com/wired/128/anonymous-mask.png" class="image-fluid user-navbar"></img>'
-    html  += '<button type="button" class="btn btn-outline-danger col-12 col-lg-auto">Cerrar Sesión</button>';
+    html  += '<button type="button" class="btn btn-outline-danger col-12 col-lg-auto" onclick="hacer_logout()">Cerrar Sesión</button>';
 
     document.getElementById("btn-navbar-user").innerHTML = html;
+    document
 }
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
+function delete_cookie(name) {
+    document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function hacer_logout() {
+    delete_cookie('token');
+    document.location.href="/";
+}
+
+function tokenVerification() {
+
+    //TODO Revisar el token en contra del backend
+
+    if (getCookie('token') === '') {
+        console.log("Cookie not detected");
+        //console.log(Cookies.get('token'));
+        console.log(getCookie('token'));
+        document.location.href="/login.html";
+
+    }
+    console.log("Cookie detected");
+    console.log(getCookie('token'));
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function tokenPresence() {
+    if (getCookie('token') === '') {
+        console.log("Cookie not detected");
+    } else {
+        //TODO pasar el nombre del usuario dinñamico
+        cambiar_header_usuario('javi')
+    }
+  }
+
+  function redirigirUsuario() {
+    var tok = getCookie('token')
+  }

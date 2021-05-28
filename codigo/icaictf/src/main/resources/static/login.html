@@ -16,6 +16,7 @@
 
         <!-- JS estandar -->
         <script type=text/javascript src="./js/std.js"></script>
+        <script type=text/javascript src="./js/login.js"></script>
 
         <!-- JQUery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -68,51 +69,6 @@
     <script>
         load_navbar('Inicio')
         load_footer()
-    </script>
-    <script>
         document.getElementById("formulario-inisesion").addEventListener('submit', validateForm);
-        function validateForm(event) {
-            event.preventDefault()
-            try {
-                var usuario = document.getElementById("userInput").value;
-                var contr = document.getElementById("passwordInput").value;
-                const data = { username: usuario, password: contr };
-                const address = '/api/login';
-                fetch(address, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data);
-                        if (typeof data.jwttoken !== 'undefined') {
-                            console.log("Authenticated");
-                            //window.Cookies.set('token', data.jwttoken)
-                            document.cookie = "token="+data.jwttoken;
-                            window.location.replace("/home/"+usuario)
-                            //document.location.href="www.google.es";
-
-                        } else {
-                            alert("Credential not recognized");
-                            showModal("Credencial no reconocida");
-                        }
-                    });
-
-            } catch (err) {
-                console.error(err.message);
-            }
-            return false;
-        }
-
-        function showModal(response) {
-            html = '<p>Código de error: '+response.status+'</p>';
-            // html += '<p>Mensaje: '+response.errors[0].json().defaultMessage+'<p>';
-            console.log(response)
-            document.getElementById("modal-text").innerHTML=html;
-        }
-
     </script>
 </html>
