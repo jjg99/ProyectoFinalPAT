@@ -34,4 +34,9 @@ public class ChallengeTempleteController {
         return "challenge_preview";
     }
 
+    @GetMapping("challenge/make/{id}")
+    public String makeChalle(Model model, @PathVariable ("id") Integer id) {
+        return "make_challenge";
+    }
+
 }
