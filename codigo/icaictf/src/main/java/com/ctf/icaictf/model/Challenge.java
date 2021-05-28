@@ -3,8 +3,6 @@ package com.ctf.icaictf.model;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.ctf.icaictf.model.challengedata.ChallengeData;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 

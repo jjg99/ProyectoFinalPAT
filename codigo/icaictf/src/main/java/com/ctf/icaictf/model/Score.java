@@ -14,18 +14,18 @@ import lombok.Data;
 @Data
 @Table("SCORES")
 public class Score {
-    @NotBlank
     @Id
+    private Integer id;
+    
+    @NotBlank
     @Size(min=4, max=24)
     private String username;
 
     @NotNull
-    @Id
-    private Integer id;
+    private Integer challenge_id;
 
     private Integer points;
 
-    @NotBlank
     private Timestamp start_date;
 
     private Timestamp stop_date;
