@@ -27,7 +27,7 @@ function sendChallenge(event){
     {
         method : 'POST',
         headers : {
-            'Authorization': 'Bearer '+ document.cookie.split("=")[1],
+            'Authorization': 'Bearer '+ getCookie('token'),
             'Content-Type' : 'application/json',
             'Accept' : 'application/json'
         },
@@ -59,7 +59,7 @@ function sendFile(challenge) {
     fetch("/files/upload/"+challenge.id, 
     {
         headers : {
-            'Authorization': 'Bearer '+ document.cookie.split("=")[1],
+            'Authorization': 'Bearer '+ getCookie('token'),
         },
         method : 'POST',
         body : formData

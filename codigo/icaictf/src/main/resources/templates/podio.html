@@ -35,13 +35,13 @@
         <div class="accordion accordion" id="accordionPodio">
           <div class="accordion-item" th:each="user : ${users}">
           <!-- Item -->
-            <h2 class="accordion-header" th:id="'heading'+${user.position}">
-              <button class="d-flex accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#collapse'+${user.position}" aria-expanded="false" th:aria-controls="'collapse'+${user.position}">
-                      <h5 class="usuario flex-grow-1" th:text="${user.position}+'º &nbsp '+${user.username}"></h5>
+            <h2 class="accordion-header" th:id="'heading'+${user.username}">
+              <button class="d-flex accordion-button collapsed" type="button" data-bs-toggle="collapse" th:data-bs-target="'#collapse'+${user.username}" aria-expanded="false" th:aria-controls="'collapse'+${user.username}">
+                      <h5 class="usuario flex-grow-1" th:text="${user.username}+'º &nbsp '+${user.username}"></h5>
                       <img class="usuario-pais" th:src="'https://www.countryflags.io/'+${user.country_code}+'/flat/32.png'">
               </button>
             </h2>
-            <div th:id="'collapse'+${user.position}" class="accordion-collapse collapse" th:aria-labelledby="'heading'+${user.position}" data-bs-parent="#accordionPodio">
+            <div th:id="'collapse'+${user.username}" class="accordion-collapse collapse" th:aria-labelledby="'heading'+${user.username}" data-bs-parent="#accordionPodio">
               <div class="accordion-body info-usuario">
                 <div th:text="'País: '+${user.country}"></div>
               </div>
