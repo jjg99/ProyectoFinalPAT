@@ -30,7 +30,7 @@ function load_navbar(active) {
     if (active=='Desafios') {
         html += 'active ';
     }
-    html += 'col-6 col-lg-auto" aria-current="page" href="#">Desafíos</a>';
+    html += 'col-6 col-lg-auto" aria-current="page" href="/challenges">Desafíos</a>';
 
     // Opcion Sobre nosotors
     html +='<a class="nav-link ';

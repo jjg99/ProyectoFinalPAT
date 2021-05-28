@@ -1,5 +1,8 @@
 package com.ctf.icaictf.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ctf.icaictf.model.Challenge;
 import com.ctf.icaictf.repository.ChallengeRepository;
 import com.ctf.icaictf.service.ChallengeService;
@@ -14,17 +17,16 @@ public class ChallengeServiceImpl implements ChallengeService{
     private ChallengeRepository challengeRepository;
     
     @Override
-    public Boolean createChallenge(Challenge challenge) {
+    public Challenge createChallenge(Challenge challenge) {
         try {
-            System.out.println(challenge.getId()+challenge.getDifficulty()+challenge.getUsername()+challenge.getData());
-            System.out.println("***************************************************************************************");
-            challengeRepository.add(challenge.getId(),challenge.getDifficulty(),challenge.getUsername(),challenge.getData());
-            // challengeRepository.save(challenge);
+            // System.out.println(challenge.getId()+challenge.getDifficulty()+challenge.getUsername()+challenge.getData());
+            // System.out.println("***************************************************************************************");
+            // challengeRepository.add(challenge.getId(),challenge.getDifficulty(),challenge.getUsername(),challenge.getData());
+            return challengeRepository.save(challenge);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
-        return true;
     }
 
     @Override
@@ -34,5 +36,14 @@ public class ChallengeServiceImpl implements ChallengeService{
         } catch (Exception e) {
             return null;
         }
+    }
+
+    @Override
+    public List<Challenge> getChallenges() {
+        List<Challenge> challenges = new ArrayList<Challenge>();
+        for (Challenge challenge : challengeRepository.findAll()) {
+            challenges.add(challenge);
+        }
+        return challenges;
     }
 }

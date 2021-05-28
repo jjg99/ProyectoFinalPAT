@@ -23,13 +23,12 @@ public class ChallengeController {
     private ChallengeService challengeService;
     
     @PostMapping("/new")
-    public ResponseEntity<String> createChallenge(@RequestBody @Valid Challenge challenge) {
-        // System.out.println(challenge.getData().get("archivos"));
-        System.out.println("*********************");
-        if (challengeService.createChallenge(challenge)){
-            return new ResponseEntity<String>("OK", HttpStatus.OK);
+    public ResponseEntity<Challenge> createChallenge(@RequestBody @Valid Challenge challenge) {
+        Challenge BD_challenge = challengeService.createChallenge(challenge);
+        if (BD_challenge!=null){
+            return new ResponseEntity<Challenge>(BD_challenge, HttpStatus.OK);
         } else {
-            return new ResponseEntity<String>("KO", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -42,4 +41,16 @@ public class ChallengeController {
             return new ResponseEntity<>("No such challenge",HttpStatus.NOT_FOUND);
         }
     }
+
+    // @GetMapping
+    // public ResponseEntity<Object> getChallenges() {
+    //     List<Challenge> challenge = challengeService.getChallenges();
+    //     if (challenge!=null){
+    //         return new ResponseEntity<>(challenge, HttpStatus.OK);
+    //     } else {
+    //         return new ResponseEntity<>("No such challenge",HttpStatus.NOT_FOUND);
+    //     }
+    // }
+    
+    
 }

@@ -14,7 +14,6 @@ import lombok.Data;
 @Table("CHALLENGES")
 public class Challenge {
     @Id
-    @NotNull
     private Integer id;
 
     @NotNull
@@ -23,9 +22,13 @@ public class Challenge {
     @NotBlank
     private String username;
 
-    //@NotBlank
-    // private ChallengeData data;
+    @NotBlank
     private String data;
 
+    @NotBlank
+    private String name;
+
+    @NotBlank
+    private String description;
 
 }
